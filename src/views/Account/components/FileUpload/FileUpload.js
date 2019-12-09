@@ -40,9 +40,9 @@ class FileUpload extends Component {
   preUpload = () => {//与服务器交互部分
     //let res = request.post('http://localhost:3000', this.state.uploadParams)
     //console.log(res);
-    var console = console;
+    var Console = console;
     let uploadList = this.state.uploadParams.chunks//分片上传列表
-    console.log(this.state.uploadParams)
+    Console.log(this.state.uploadParams)
     let currentChunks = this.state.uploadParams.file.fileChunks
 
     var _this = this
@@ -88,7 +88,7 @@ class FileUpload extends Component {
     }
 
     function silcePart(list) {
-      var console = console
+      var Console = console
       batchDone += 1;
       doBatchAppend();
       list.forEach((value) => {
@@ -106,7 +106,7 @@ class FileUpload extends Component {
           .withCredentials()
           .retry(2)
           .end((err, res) => {
-            console.log(res);
+            Console.log(res);
             if (err) {
               alert('连接错误，请重新上传')
             }
@@ -226,8 +226,8 @@ class FileUpload extends Component {
         }
 
         chunkFileReader.onerror = function () {
-          var console = console
-          console.warn('oops, something went wrong.');
+          var Console = console
+          Console.warn('oops, something went wrong.');
         };
 
         function loadNext() {
